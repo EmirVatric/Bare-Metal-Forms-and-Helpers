@@ -1,13 +1,13 @@
 <!--
 <form  method="POST" action="/users" accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label>Name:</label>
+  <label for='user[name]'>Name:</label>
   <input name="user[name]" type="text"/>
   <br/>
-  <label>Email:</label>
+  <label for='user[email]'>Email:</label>
   <input name="user[email]" type="email"/>
   <br/>
-  <label>Password:</label>
+  <label for='user[password]'>Password:</label>
   <input name="user[password]" type="password"/>
   <br/>
   <input type="submit" value="Submit"/>
@@ -29,15 +29,15 @@
 <% end %>
 -->
 <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prevented this user from being saved:</h2>
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
+<div id="error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error") %>
+    prevented this user from being saved:</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 
 <%= form_for @user do |f|%>
