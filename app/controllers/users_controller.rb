@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -29,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params[:user].permit(:name, :email, :password) 
+    params[:user].permit(:name, :email, :password)
   end
 end
